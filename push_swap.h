@@ -6,7 +6,7 @@
 /*   By: ylagzoul <ylagzoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 23:25:27 by ylagzoul          #+#    #+#             */
-/*   Updated: 2025/02/20 15:50:47 by ylagzoul         ###   ########.fr       */
+/*   Updated: 2025/02/21 16:55:28 by ylagzoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ char	**split_input(char **str);
 void	print_error(char **str);
 void	free_string_array(char **str);
 void	ft_freeup(char **strs, int i);
+char	*ft_strdup1(const char *s1);
 
 void	sa_bonus(t_list **sa);
 void	sb_bonus(t_list **sb);

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_handel2.c                                       :+:      :+:    :+:   */
+/*   ft_handel2_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylagzoul <ylagzoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 13:26:39 by ylagzoul          #+#    #+#             */
-/*   Updated: 2025/02/21 16:55:35 by ylagzoul         ###   ########.fr       */
+/*   Created: 2025/02/21 18:33:23 by ylagzoul          #+#    #+#             */
+/*   Updated: 2025/02/21 18:33:24 by ylagzoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	free_string_array(char **str)
 {
@@ -47,28 +47,4 @@ void	free_stack(t_list	**list)
 		*list = (*list)->next;
 		free(free_node);
 	}
-}
-
-char	*ft_strdup1(const char *s1)
-{
-	int		i;
-	int		a;
-	int		len;
-	char	*dst;
-
-	a = 0;
-	while (s1[a])
-		a++;
-	len = a + 1;
-	dst = malloc (sizeof(char) * len);
-	if (!dst)
-		return (NULL);
-	i = 0;
-	while (s1[i])
-	{
-		dst[i] = s1[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: ylagzoul <ylagzoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:27:34 by ylagzoul          #+#    #+#             */
-/*   Updated: 2025/02/20 13:27:36 by ylagzoul         ###   ########.fr       */
+/*   Updated: 2025/02/21 18:20:50 by ylagzoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,14 +81,14 @@ int	find_max_index(t_list **stack, int i)
 	return (j);
 }
 
-void	push_to_stack_a(t_list **stacka, t_list **stackb, int i)
+void	push_to_stack_a(t_list **stacka, t_list **stackb, int nbr_input)
 {
 	int		j;
 
 	while (*stackb)
 	{
-		j = find_max_index(stackb, i);
-		if (j <= i / 2)
+		j = find_max_index(stackb, nbr_input);
+		if (j <= nbr_input / 2)
 		{
 			while (j != 0)
 			{
@@ -97,34 +97,32 @@ void	push_to_stack_a(t_list **stacka, t_list **stackb, int i)
 			}
 			push_a(stackb, stacka);
 		}
-		else if (j > i / 2)
+		else if (j > nbr_input / 2)
 		{
-			while (j != i)
+			while (j != nbr_input)
 			{
 				reverse_rotate_b(stackb);
 				j++;
 			}
 			push_a(stackb, stacka);
 		}
-		i--;
+		nbr_input--;
 	}
 }
 
 void	sort_large_stack(t_list **stack_a, t_list **stack_b)
 {
-	int		i;
+	int		nbr_input;
 	int		rang1;
 	int		size1;
 
 	size1 = 0;
-	i = stack_size(*stack_a, 1);
-	if (i <= 100)
-	{
+	nbr_input = stack_size(*stack_a, 1);
+	if (nbr_input <= 100)
 		rang1 = 12;
-		size1 = stack_size(*stack_a, 0) > (i / 3);
-	}
 	else
-		rang1 = 30;
+		rang1 = 34;
+	size1 = stack_size(*stack_a, 0) > (nbr_input / 3);
 	push_to_stack_b(stack_a, stack_b, size1, rang1);
-	push_to_stack_a(stack_a, stack_b, i);
+	push_to_stack_a(stack_a, stack_b, nbr_input);
 }

@@ -6,11 +6,11 @@
 /*   By: ylagzoul <ylagzoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 13:27:04 by ylagzoul          #+#    #+#             */
-/*   Updated: 2025/02/20 13:27:07 by ylagzoul         ###   ########.fr       */
+/*   Updated: 2025/02/21 16:30:40 by ylagzoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 size_t	ft_strlen(char *str)
 {

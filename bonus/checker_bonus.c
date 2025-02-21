@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_bones.c                                    :+:      :+:    :+:   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylagzoul <ylagzoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 13:21:58 by ylagzoul          #+#    #+#             */
-/*   Updated: 2025/02/20 22:43:16 by ylagzoul         ###   ########.fr       */
+/*   Created: 2025/02/21 18:32:53 by ylagzoul          #+#    #+#             */
+/*   Updated: 2025/02/21 20:18:44 by ylagzoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void	ft_handle_atoi(char **str, t_list **a);
+#include "../push_swap.h"
 
 int	check1(char *str, char *sre)
 {
@@ -116,7 +114,7 @@ int	main(int ac, char *av[])
 		if (!nbr_input)
 			exit(1);
 		convert_to_stack(av, &stack_a);
-		line = egt_next_line(0);
+		line = get_next_line(0);
 		while (line)
 		{
 			if (!check_operations(line))
@@ -129,3 +127,4 @@ int	main(int ac, char *av[])
 	}
 	return (0);
 }
+;

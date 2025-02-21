@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_handel3.c                                       :+:      :+:    :+:   */
+/*   ft_handel3_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylagzoul <ylagzoul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/20 13:26:48 by ylagzoul          #+#    #+#             */
-/*   Updated: 2025/02/21 16:55:46 by ylagzoul         ###   ########.fr       */
+/*   Created: 2025/02/21 18:33:30 by ylagzoul          #+#    #+#             */
+/*   Updated: 2025/02/21 18:48:27 by ylagzoul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 char	**allocate_result_array(int word_count)
 {
@@ -33,7 +33,7 @@ char	**split_and_store(char *input, char **t, int *a)
 		return (free_string_array(t), write(1, "Error\n", 6), NULL);
 	while (split_result[j])
 	{
-		t[*a] = ft_strdup1(split_result[j]);
+		t[*a] = ft_strdup(split_result[j]);
 		if (!t[*a])
 		{
 			free_string_array(t);
@@ -51,11 +51,11 @@ char	**split_and_store(char *input, char **t, int *a)
 char	**split_input(char **str)
 {
 	int		i;
-	int		a;
+	int		k;
 	int		word_count;
 	char	**t;
 
-	a = 0;
+	k = 0;
 	i = 1;
 	word_count = count_input_words(str);
 	if (!word_count)
@@ -65,11 +65,11 @@ char	**split_input(char **str)
 		return (NULL);
 	while (str[i])
 	{
-		t = split_and_store(str[i], t, &a);
+		t = split_and_store(str[i], t, &k);
 		if (!t)
 			return (NULL);
 		i++;
 	}
-	t[a] = NULL;
+	t[k] = NULL;
 	return (t);
 }
